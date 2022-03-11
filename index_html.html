@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #1ad5a9;
+        }
+
+        #s,
+        #g,
+        #k {
+            font-size: 100px;
+            cursor: pointer;
+        }
+
+        #enm {
+            position: absolute;
+            top: 0;
+            left: 320px;
+            text-align: center;
+            font-size: 250px;
+            transform: rotate(10deg);
+        }
+
+        #ent {
+            position: absolute;
+            top: 0;
+            transform: rotate(10deg);
+            left: 600px;
+            text-align: center;
+            font-size: 250px;
+        }
+
+        #my {
+            position: absolute;
+            top: 200px;
+            left: 1100px;
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 30px;
+            box-shadow: 0 0 8px;
+        }
+
+        #you {
+            position: absolute;
+            top: 400px;
+            left: 1100px;
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 30px;
+            box-shadow: 0 0 8px;
+            transition-property: all;
+            transition-duration: 1s;
+        }
+
+        #you:hover {
+            background-color: #1a5fd5;
+        }
+
+        #my:hover {
+            background-color: #6f1ad5;
+        }
+
+        #c {
+            position: absolute;
+            top: 210px;
+            color: brown;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            left: 520px;
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay hidden id="sh"
+        src="https://aspb34.cdn.asset.aparat.com/aparat-video/e03458e93c3b2ae7819399b8f62da17f37401660-144p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6ImY4ODY0NTYwODRmNjliOWNkNTY5ZjM2NWVkMzVjMDBlIiwiZXhwIjoxNjQ3MDAyMTYwLCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.z9ndFEG60QSYNM1SUfC0tDMUkddQdDsmV3BzO13Kd1k"></video>
+    <h1 id="s">👊🏼</h1>
+    <h1 id="g">✌🏼</h1>
+    <h1 id="k">🤚🏼</h1>
+    <h1 id="enm"></h1>
+    <h1 id="c">Undifune</h1>
+    <h1 id="ent"></h1>
+    <button id="my">My: 0</button>
+    <button id="you">You: 0</button>
+
+    <script>
+        var my = 0
+        var you = 0
+        document.getElementById("enm").style.display = "none"
+        document.getElementById("ent").style.display = "none"
+        document.getElementById("s").addEventListener("click", function () {
+            document.getElementById("sh").play()
+            if (my == 9) {
+                document.getElementById("my").style.color = "#086345"
+                document.getElementById("my").innerHTML = "* Win *"
+                document.getElementById("you").style.color = "brown"
+                document.getElementById("you").innerHTML = "- Lous! -"
+
+            }
+            if (you == 9) {
+                document.getElementById("you").style.color = "#086345"
+                document.getElementById("you").innerHTML = "* Win *"
+                document.getElementById("my").style.color = "brown"
+                document.getElementById("my").innerHTML = "- Lous! -"
+            }
+            document.getElementById("c").style.display = "none"
+            var r = Math.round(Math.random() * 2)
+            document.getElementById("enm").innerHTML = "👊🏼"
+            document.getElementById("enm").style.display = ""
+            document.getElementById("ent").style.display = ""
+            if (r == 0) {
+                document.getElementById("ent").innerHTML = "👊🏼"
+            }
+            else if (r == 1) {
+                you += 1
+                document.getElementById("ent").innerHTML = "🤚🏼"
+                document.getElementById("you").innerHTML = `You: ${you}`
+            }
+            else if (r == 2) {
+                my += 1
+                document.getElementById("ent").innerHTML = "✌🏼"
+                document.getElementById("my").innerHTML = `My: ${my}`
+            }
+        })
+        document.getElementById("g").addEventListener("click", function () {
+            document.getElementById("sh").play()
+            if (my == 9) {
+                document.getElementById("my").style.color = "#086345"
+                document.getElementById("my").innerHTML = "* Win *"
+                document.getElementById("you").style.color = "brown"
+                document.getElementById("you").innerHTML = "- Lous! -"
+
+            }
+            if (you == 9) {
+                document.getElementById("you").style.color = "#086345"
+                document.getElementById("you").innerHTML = "* Win *"
+                document.getElementById("my").style.color = "brown"
+                document.getElementById("my").innerHTML = "- Lous! -"
+            }
+            document.getElementById("c").style.display = "none"
+            document.getElementById("ent").style.display = ""
+            var r = Math.round(Math.random() * 2)
+            document.getElementById("enm").style.display = ""
+            document.getElementById("enm").innerHTML = "✌🏼"
+            document.getElementById("ent").style.display = ""
+            if (r == 0) {
+                you += 1
+                document.getElementById("ent").innerHTML = "👊🏼"
+                document.getElementById("you").innerHTML = `You: ${you}`
+            }
+            else if (r == 1) {
+                my += 1
+                document.getElementById("ent").innerHTML = "🤚🏼"
+                document.getElementById("my").innerHTML = `My: ${my}`
+            }
+            else if (r == 2) {
+                document.getElementById("ent").innerHTML = "✌🏼"
+            }
+        })
+        document.getElementById("k").addEventListener("click", function () {
+            document.getElementById("sh").play()
+            if (my == 9) {
+                document.getElementById("my").style.color = "#086345"
+                document.getElementById("my").innerHTML = "* Win *"
+                document.getElementById("you").style.color = "brown"
+                document.getElementById("you").innerHTML = "- Lous! -"
+
+            }
+            if (you == 9) {
+                document.getElementById("you").style.color = "#086345"
+                document.getElementById("you").innerHTML = "* Win *"
+                document.getElementById("my").style.color = "brown"
+                document.getElementById("my").innerHTML = "- Lous! -"
+            }
+            document.getElementById("c").style.display = "none"
+            document.getElementById("ent").style.display = ""
+            var r = Math.round(Math.random() * 2)
+            document.getElementById("enm").style.display = ""
+            document.getElementById("enm").innerHTML = "🤚🏼"
+            if (r == 0) {
+                my += 1
+                document.getElementById("ent").innerHTML = "👊🏼"
+                document.getElementById("my").innerHTML = `My: ${my}`
+            }
+            else if (r == 1) {
+                document.getElementById("ent").innerHTML = "🤚🏼"
+
+            }
+            else if (r == 2) {
+                you += 1
+                document.getElementById("ent").innerHTML = "✌🏼"
+                document.getElementById("you").innerHTML = `You: ${you}`
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>
